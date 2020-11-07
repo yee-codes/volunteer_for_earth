@@ -31,6 +31,9 @@ gem 'sprockets', '~> 4.0'
 # Bootstrap JavaScript depends on jQuery
 gem 'jquery-rails'
 
+# Add devise
+gem 'devise'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
