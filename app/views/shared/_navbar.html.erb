@@ -23,7 +23,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Our Mission</a>
+        <%= link_to 'Our Mission', about_us_index_path, class: 'nav-link' %>
       </li>
       
       <% if user_signed_in? %>
