@@ -19,5 +19,6 @@ module VolunteerForEarth
     # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
     config.serve_static_assets = true
 
+    config.assets.initialize_on_precompile = false
   end
 end
