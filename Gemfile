@@ -34,6 +34,9 @@ gem 'jquery-rails'
 # Add devise
 gem 'devise'
 
+# Stripe
+gem 'stripe'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
