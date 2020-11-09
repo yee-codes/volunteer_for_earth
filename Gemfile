@@ -40,6 +40,8 @@ gem 'aws-sdk'
 # Stripe
 gem 'stripe'
 
+gem 'mail_form'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
