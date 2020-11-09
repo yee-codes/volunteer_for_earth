@@ -1,2 +1,22 @@
-<h1>Opportunities#index</h1>
-<p>Find me in app/views/opportunities/index.html.erb</p>
+<h1>Volunteering Opportunities</h1>
+ 
+<table>
+  <tr>
+    <th>Organisation</th>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+ 
+  <% @opportunities.each do |opportunity| %>
+    <tr>
+      <td><%= opportunity.organisation %></td>
+      <td><%= opportunity.title %></td>
+      <td><%= opportunity.location %></td>
+      <td><%= opportunity.description %></td>
+      <td><%= link_to 'Show', opportunity_path(opportunity) %></td>
+      <td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
+    </tr>
+  <% end %>
+</table>

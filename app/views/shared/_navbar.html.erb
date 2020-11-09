@@ -15,15 +15,15 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Find Opportunities</a>
+        <%= link_to 'Find Opportunities', opportunities_path, class: 'nav-link' %>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Find Volunteers</a>
+        <%= link_to 'Find Volunteers', new_opportunity_path, class: 'nav-link' %>
       </li>
 
       <li class="nav-item">
-        <%= link_to 'Our Mission', about_us_index_path, class: 'nav-link' %>
+        <%= link_to 'Our Mission', contacts_new_path, class: 'nav-link' %>
       </li>
       
       <% if user_signed_in? %>
