@@ -34,6 +34,9 @@ gem 'jquery-rails'
 # Add devise
 gem 'devise'
 
+# aws-sdk
+gem 'aws-sdk'
+
 # Stripe
 gem 'stripe'
 
