@@ -1,0 +1,43 @@
+<h1>edit opportunity</h1>
+
+<% if @opportunity.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@opportunity.errors.count, "error") %> prohibited
+        this opportunity from being saved:
+      </h2>
+      <ul>
+        <% @opportunity.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_with(model: @opportunity, local: true) do |form| %>
+  <p>
+    <%= form.label :organisation %><br>
+    <%= form.text_field :organisation %>
+  </p>
+
+<p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+</p>
+
+<p>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
+</p>
+ 
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= form.submit "Create New Opportunity"%>
+  </p>
+<% end %>
+
+<%= link_to 'Back', opportunities_path %>
