@@ -42,6 +42,8 @@ gem 'stripe'
 
 gem 'mail_form'
 
+gem 'rails_admin'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

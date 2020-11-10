@@ -1,4 +1,5 @@
 class OpportunitiesController < ApplicationController
+  skip_before_action :authenticate_user!, :only => [:index]
   def index
     @opportunities = Opportunity.all
   end

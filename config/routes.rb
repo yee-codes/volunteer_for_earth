@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'contacts/new'
   get 'about_us/index'
   get 'opportunities/index'
