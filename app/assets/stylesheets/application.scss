@@ -1,3 +1,12 @@
 // i removed *= require_tree . & *= require_self between /* and */ for bootstrap
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+.style_image {
+    display: block;
+    margin: 0 auto;
+}
+
+.center-text {
+    text-align: center;
+}

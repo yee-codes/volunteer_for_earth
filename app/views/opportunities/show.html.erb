@@ -1,19 +1,25 @@
-<p>
+<p class="center-text">
   <strong>Organisation:</strong>
   <%= @opportunity.organisation %>
 </p>
  
-<p>
+<p class="center-text">
   <strong>Title:</strong>
   <%= @opportunity.title %>
 </p>
 
-<p>
+<p class="center-text">
   <strong>Location:</strong>
   <%= @opportunity.location %>
 </p>
 
-<p>
+<div class="shadow">
+    <% if @opportunity.image.attached? %>
+        <%= image_tag @opportunity.image, :class => "img-fluid w-75 rounded mx-auto d-block" %>
+    <% end %>
+</div>
+
+<p class="center-text">
   <strong>Description:</strong>
   <%= @opportunity.description %>
 </p>
