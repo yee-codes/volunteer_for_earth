@@ -25,4 +25,7 @@
 </p>
 
 <%= link_to 'Edit', edit_opportunity_path(@opportunity) %>
+<td><%= link_to 'Delete', opportunity_path(opportunity),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
 <%= link_to 'Back', opportunities_path %>
