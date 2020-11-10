@@ -44,6 +44,8 @@ gem 'mail_form'
 
 gem 'rails_admin'
 
+gem 'cancancan'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

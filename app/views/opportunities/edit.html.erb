@@ -1,3 +1,7 @@
+<% if current_user.superadmin_role? || current_user.organisation_role? %>
+	<p>Visible only for admins and organisations! </p>
+<% end %>
+
 <h1>edit opportunity</h1>
 
 <% if @opportunity.errors.any? %>
