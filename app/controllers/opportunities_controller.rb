@@ -38,6 +38,6 @@ class OpportunitiesController < ApplicationController
   private
 
   def opportunity_params
-    params.require(:opportunity).permit(:organisation, :title, :location, :description)
+    params.require(:opportunity).permit(:organisation, :title, :location, :description, :image)
   end
 end

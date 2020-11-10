@@ -35,6 +35,12 @@
     <%= form.text_area :description %>
   </p>
  
+<p>
+    <%= form.label :image %><br>
+    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg' %>
+  </p>
+
+
   <p>
     <%= form.submit "Create New Opportunity"%>
   </p>

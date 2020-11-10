@@ -1180,6 +1180,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  aws-sdk-s3 (~> 1.83)
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.0.0)
   byebug
