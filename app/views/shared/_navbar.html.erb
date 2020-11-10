@@ -9,37 +9,37 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       
-      <li class="nav-item active">
+      <li class="nav-item hvr-grow">
         <%= link_to "Home", root_path, class: "nav-link" %>
         <%# <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a> %>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item hvr-grow">
         <%= link_to 'Find Opportunities', opportunities_path, class: 'nav-link' %>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item hvr-grow">
         <%= link_to 'Find Volunteers', new_opportunity_path, class: 'nav-link' %>
       </li>
 
-      <li class="nav-item">
+      <li class="nav-item hvr-grow">
         <%= link_to 'Our Mission', contacts_new_path, class: 'nav-link' %>
       </li>
       
       <% if user_signed_in? %>
-        <li class="nav-item">
+        <li class="nav-item hvr-grow">
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
         </li>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item hvr-grow">
           <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item hvr-grow">
           <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
         </li>
       <% end %>
 
-      <li class="nav-item">
+      <li class="nav-item hvr-grow">
         <%= link_to 'Donate', new_charge_path, class: 'nav-link' %>
       </li>
 

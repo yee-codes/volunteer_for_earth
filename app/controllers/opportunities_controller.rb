@@ -35,6 +35,13 @@ class OpportunitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @opportunity = Opportunity.find(params[:id])
+    @opportunity.destroy
+   
+    redirect_to opportunities_path
+  end
+
   private
 
   def opportunity_params
