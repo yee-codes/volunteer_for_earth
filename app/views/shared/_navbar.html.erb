@@ -15,17 +15,21 @@
       </li>
 
       <li class="nav-item hvr-grow">
-        <%= link_to 'Find Opportunities', opportunities_path, class: 'nav-link' %>
+        <%= link_to 'For Volunteers', opportunities_path, class: 'nav-link' %>
       </li>
 
       <li class="nav-item hvr-grow">
-        <%= link_to 'Find Volunteers', new_opportunity_path, class: 'nav-link' %>
+        <%= link_to 'For Organisations', new_opportunity_path, class: 'nav-link' %>
       </li>
 
       <li class="nav-item hvr-grow">
         <%= link_to 'Our Mission', contacts_new_path, class: 'nav-link' %>
       </li>
-      
+
+      <li class="nav-item hvr-grow">
+        <%= link_to 'Donate', new_charge_path, class: 'nav-link' %>
+      </li>
+
       <% if user_signed_in? %>
         <li class="nav-item hvr-grow">
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -39,9 +43,11 @@
         </li>
       <% end %>
 
-      <li class="nav-item hvr-grow">
-        <%= link_to 'Donate', new_charge_path, class: 'nav-link' %>
-      </li>
+      <% if user_signed_in? && current_user.superadmin_role? %>
+        <li class="nav-item hvr-grow">
+          <%= link_to 'Admin', rails_admin.dashboard_path, class: 'nav-link' %>
+        </li>
+      <% end %>
 
     </ul>
   </div>
