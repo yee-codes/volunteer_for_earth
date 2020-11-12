@@ -17,7 +17,9 @@ class OpportunitiesController < ApplicationController
   end
 
   def create
-    @opportunity = Opportunity.new(opportunity_params)
+    @opportunity = current_user.opportunities.create(opportunity_params)
+    
+    Opportunity.new(opportunity_params)
    
     if @opportunity.save
       redirect_to @opportunity

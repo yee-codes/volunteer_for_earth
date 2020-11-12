@@ -24,8 +24,14 @@
   <%= @opportunity.description %>
 </p>
 
-<%= link_to 'Edit', edit_opportunity_path(@opportunity) %>
-<td><%= link_to 'Delete', opportunity_path(@opportunity),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+<% if current_user %>
+  <% if current_user.id == @opportunity.user_id %>
+  <%= link_to 'Edit', edit_opportunity_path(@opportunity) %>
+  <td><%= link_to 'Delete', opportunity_path(@opportunity),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+<% end %>
+
+
 <%= link_to 'Back', opportunities_path %>
