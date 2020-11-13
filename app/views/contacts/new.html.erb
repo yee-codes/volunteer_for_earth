@@ -1,8 +1,3 @@
-
-<div class="mission-image">
-    <%= image_tag asset_path("mission.png", alt: "Our Mission") %>
-</div>
-
 <div class="center-text">
     <h1>Our Mission</h1>
     <p>Volunteer for Earth is a community-based charity organisation for people who want to make a difference to our planet.</p>
@@ -12,7 +7,7 @@
     </p>
     <p>As you would expect, it isn’t simply possible for Australia's environmental challenges to be solved in just one day, so Volunteer for Earth co-operate and works alongside community, government and businesses to provide practical solutions to help us all live more sustainably every day of the year.
     </p>
-</div>``
+</div>
 
 <%= form_for @contact do |f| %>
     <% if flash[:error].present? %>
@@ -36,3 +31,10 @@
 
     <%= f.submit 'Send Message', class: "button" %>
   <% end %>
+  
+<div class="mission-image">
+    <%= image_tag asset_path("mission.png", alt: "Our Mission"), :style => "width: 100%" %>
+</div>
+
+
+

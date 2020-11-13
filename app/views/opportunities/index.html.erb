@@ -1,21 +1,17 @@
-<h1>Current Opportunities</h1>
- 
-<table>
-  <tr>
-    <th>Organisation</th>
-    <th>Title</th>
-    <th>Location</th>
-    <th>Description</th>
-    <th colspan="3"></th>
-  </tr>
- 
-  <% @opportunities.each do |opportunity| %>
-    <tr>
-      <td><%= opportunity.organisation %></td>
-      <td><%= opportunity.title %></td>
-      <td><%= opportunity.location %></td>
-      <td><%= opportunity.description %></td>
-      <td><%= link_to 'Show', opportunity_path(opportunity) %></td>
-    </tr>
-  <% end %>
-</table>
+ <div class="container">
+ <h1 class="text-center">Current Opportunities</h1>
+  <div class="card-deck"> 
+  <% @opportunities.each do |opportunity| %> 
+      
+      <div class="card mb-4" style="min-width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center"><%=opportunity.title%></h5>
+            <p class="card-text mt-2"><%=opportunity.organisation %></p>
+            <p class="card-text"><small class="text-muted"><%= opportunity.location %></small></p>
+            <button type="button" class="btn btn-success text-white"><p class="card-text text-center"><%= link_to 'More details', opportunity_path(opportunity) %></p></button>
+        </div>
+      </div> 
+  
+  <%end%> 
+  </div> 
+  </div>
