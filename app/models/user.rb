@@ -1,4 +1,28 @@
 class User < ApplicationRecord
+  # validates and sanitises all input
+  validates :email,
+    presence: true,
+    uniqueness: true,
+    format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  validates :username,
+    length: { minimum: 2 },
+    uniqueness: true
+
+  validates :first_name,
+    allow_blank: true,
+    length: { minimum: 2 }
+
+  validates :last_name,
+    allow_blank: true,
+    length: { minimum: 2 }
+
+
+
+
+
+
+
   has_many :opportunities
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
