@@ -49,6 +49,12 @@
         </li>
       <% end %>
 
+      <% if user_signed_in? %>
+        <li class="nav-item hvr-grow">
+          <%= link_to 'Your Account', edit_user_registration_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+
     </ul>
   </div>
 </nav>
