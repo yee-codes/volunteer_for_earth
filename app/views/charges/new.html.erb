@@ -1,21 +1,25 @@
-
+<%# Render navbar partials %>
 <%= render 'shared/navbar' %>
 
+<%# Donate banner image %>
 <%= image_tag asset_path("banner.png", alt: "Donate Banner") %>
-
 
 <%= form_tag charges_path do %>
   <article>
+    <%# Error handling if encounter payment issue %>
     <% if flash[:error].present? %>
       <div id="error_explanation">
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
+
+    <%# Default donation amount %>
     <label class="amount">
       <span>Amount: $5.00</span>
     </label>
   </article>
 
+  <%# Configuration for stripe %>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"

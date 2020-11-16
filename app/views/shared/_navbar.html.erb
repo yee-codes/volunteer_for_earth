@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7ed957;">
-  <%# <a class="navbar-brand"> %>
     <%= link_to image_tag("logo.png", size: "30x30", alt: "App Logo"), root_path %>
-  <%# </a> %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,7 +10,6 @@
       
       <li class="nav-item hvr-grow">
         <%= link_to "Home", root_path, class: "nav-link" %>
-        <%# <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a> %>
       </li>
 
       <li class="nav-item hvr-grow">
@@ -54,7 +52,6 @@
           <%= link_to 'Your Account', edit_user_registration_path, class: 'nav-link' %>
         </li>
       <% end %>
-
     </ul>
   </div>
 </nav>

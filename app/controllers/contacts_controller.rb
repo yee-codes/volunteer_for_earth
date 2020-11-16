@@ -1,9 +1,13 @@
 class ContactsController < ApplicationController
+  # Users don't have to be authenticated or authorised to use the contact form
   skip_before_action :authenticate_user!, :only => [:new, :create]
+
+  # Initialise new contact
   def new 
     @contact = Contact.new
   end
 
+  # Capture & send user's inputs in the contact form; and error handling
   def create
     @contact = Contact.new(params[:contact])
     @contact.request = request

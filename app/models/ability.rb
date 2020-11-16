@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Ability
+  # Including cancancan for app authorisation
   include CanCan::Ability
 
   def initialize(user)
@@ -8,10 +9,8 @@ class Ability
     if user.superadmin_role?
           can :manage, :all
           can :access, :rails_admin       # only allow admin users to access Rails Admin
-          can :manage, :dashboard         # allow access to dashboard
+          can :manage, :dashboard         
     end
-
-    
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

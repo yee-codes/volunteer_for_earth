@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Install Bootstrap
+# Use Bootstrap to style Rails app
 gem 'bootstrap', '~> 4.0.0'
 
 # Install Sprockets
@@ -31,20 +31,26 @@ gem 'sprockets', '~> 4.0'
 # Bootstrap JavaScript depends on jQuery
 gem 'jquery-rails'
 
-# Add devise
+# Use devise for user authentication
 gem 'devise'
 
-# aws-sdk
+# AWS
 gem 'aws-sdk'
 
-# Stripe
+# Stripe for the donate button
 gem 'stripe'
 
+# Contact form
 gem 'mail_form'
 
+# App admin dashboard
 gem 'rails_admin'
 
+# Use for user authorisation
 gem 'cancancan'
+
+# AWS S3 for image upload
+gem "aws-sdk-s3", "~> 1.83"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -76,5 +82,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "aws-sdk-s3", "~> 1.83"

@@ -1,21 +1,29 @@
 class OpportunitiesController < ApplicationController
+  # Anyone can view all the listings, but only authenticated or authorised users can access other controller actions
   skip_before_action :authenticate_user!, :only => [:index]
+
+  # List all current volunteering opportunities
   def index
     @opportunities = Opportunity.all
   end
 
+  # Show one opportunity
   def show
     @opportunity = Opportunity.find(params[:id])
   end
 
+  # Initialise a new opportunity listing
   def new
     @opportunity = Opportunity.new
   end
 
+  # Render existing data in the edit form
   def edit
     @opportunity = Opportunity.find(params[:id])
   end
 
+  # Associate a newly created opportunity listing to a particular user, only the user
+  # that created the listing can edit or delete the listing
   def create
     @opportunity = current_user.opportunities.create(opportunity_params)
     
@@ -28,6 +36,7 @@ class OpportunitiesController < ApplicationController
     end
   end
 
+  # Put/patch method to update a listing
   def update
     @opportunity = Opportunity.find(params[:id])
    
@@ -38,6 +47,7 @@ class OpportunitiesController < ApplicationController
     end
   end
 
+  # Method to delete a listing
   def destroy
     @opportunity = Opportunity.find(params[:id])
     @opportunity.destroy
@@ -47,6 +57,7 @@ class OpportunitiesController < ApplicationController
 
   private
 
+  # Strong params
   def opportunity_params
     params.require(:opportunity).permit(:organisation, :title, :location, :description, :image)
   end
