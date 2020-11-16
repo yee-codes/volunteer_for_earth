@@ -16,14 +16,10 @@ class User < ApplicationRecord
   validates :last_name,
     allow_blank: true,
     length: { minimum: 2 }
-
-
-
-
-
-
-
+  
+  # A user can create multiple opportunity listings 
   has_many :opportunities
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

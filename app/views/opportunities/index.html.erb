@@ -1,4 +1,5 @@
- <div class="container">
+<%# Opportunities index page displaying all current opportunities %>
+<div class="container">
  <h1 class="text-center">Current Opportunities</h1>
   <div class="card-deck"> 
   <% @opportunities.each do |opportunity| %> 
@@ -11,7 +12,6 @@
             <button type="button" class="btn btn-success text-white"><p class="card-text text-center"><%= link_to 'More details', opportunity_path(opportunity) %></p></button>
         </div>
       </div> 
-  
   <%end%> 
   </div> 
-  </div>
+</div>

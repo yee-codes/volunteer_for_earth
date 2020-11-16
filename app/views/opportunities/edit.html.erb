@@ -1,9 +1,11 @@
+<%# Only users with admin or organisation role can edit a listing %>
 <% if current_user.superadmin_role? || current_user.organisation_role? %>
 	<p>Visible only for admins and organisations! </p>
 <% end %>
 
-<h1>edit opportunity</h1>
+<h1>Edit opportunity</h1>
 
+<%# Display any errors that are preventing the form from being saved %>
 <% if @opportunity.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -18,6 +20,7 @@
     </div>
   <% end %>
 
+<%# Edit form with existing data %>
 <%= form_with(model: @opportunity, local: true) do |form| %>
   <p>
     <%= form.label :organisation %><br>
@@ -44,4 +47,5 @@
   </p>
 <% end %>
 
+<%# Hyperlink to go back to the index page %>
 <%= link_to 'Back', opportunities_path %>

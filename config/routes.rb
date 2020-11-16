@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'contacts/new'
-  get 'about_us/index'
-  get 'opportunities/index'
-  devise_for :users
+  # The landing page
   root 'welcome#index'
-  resources :charges
-  get '/about_us/index', to: 'about_us#index'
+  # Opportunities endpoints
   resources :opportunities
-  # get 'welcome/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # Our Mission page
   resources :contacts, only: [:new, :create]
+  get 'contacts/new'
+  # Admin dashboard; only accessible for users with superadmin_role
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # Devise routes
+  devise_for :users
+  # Donate button with stripe
+  resources :charges  
 end

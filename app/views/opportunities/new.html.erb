@@ -1,6 +1,7 @@
 <p>This page is only accessible to approved organisations!</p>
 <p>Please click <%= link_to 'here', new_contact_path %> to contact us for approval</p>
 
+<%# Display any errors that are preventing the form from being saved %>
 <% if @opportunity.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -15,11 +16,10 @@
     </div>
   <% end %>
 
+<%# Only users with admin or organisation role can create a new opportunity %>
 <% if current_user.superadmin_role? || current_user.organisation_role? %>
 
 <h1>find volunteers</h1>
-
-
 
 <%= form_with scope: :opportunity, url: opportunities_path, local: true do |form| %>
   <p>
@@ -27,26 +27,25 @@
     <%= form.text_field :organisation %>
   </p>
 
-<p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-</p>
+  <p>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+  </p>
 
-<p>
-    <%= form.label :location %><br>
-        <%= form.text_field :location %>
-</p>
+  <p>
+      <%= form.label :location %><br>
+      <%= form.text_field :location %>
+  </p>
  
   <p>
     <%= form.label :description %><br>
     <%= form.text_area :description %>
   </p>
  
-<p>
+  <p>
     <%= form.label :image %><br>
     <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg' %>
   </p>
-
 
   <p>
     <%= form.submit "Create New Opportunity"%>
@@ -54,4 +53,5 @@
 <% end %>
 
 <% end %>
+
 <%= link_to 'Back', opportunities_path %>

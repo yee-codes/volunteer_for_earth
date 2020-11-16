@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery with: :exception
-    before_action :authenticate_user!
-    before_action :configure_permitted_parameters, if: :devise_controller?
+  # To prevent CSRF
+  protect_from_forgery with: :exception
+
+  # Get devise to authenticate user before displaying the URL
+  before_action :authenticate_user!
+
+  # For authentication and authorisation
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
 

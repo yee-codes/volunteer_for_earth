@@ -16,9 +16,9 @@ class Opportunity < ApplicationRecord
         presence: true,
         length: { minimum: 10 }
 
-
-
-
+    # One opportunity listing has zero or one image
     has_one_attached :image
+
+    # An opportunity can only belong to one user
     belongs_to :user
 end

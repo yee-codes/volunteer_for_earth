@@ -1,16 +1,13 @@
-// i removed *= require_tree . & *= require_self between /* and */ for bootstrap
-// Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
-.style_image {
-    display: block;
-    margin: 0 auto;
-}
+// Leaving this comment just in case; I removed *= require_tree . & *= require_self between /* and */ for bootstrap
 
+// Center all tags with class center-text
 .center-text {
     text-align: center;
 }
 
+// CSS for hover effect (navbar)
 .hvr-grow {
     display: inline-block;
     vertical-align: middle;
@@ -27,6 +24,7 @@
     transform: scale(1.1);
   }
 
+// Hide nickname label and input field in the contact form, the users don't need to see this
 .hidden {
     display: none;
 }
