@@ -52,6 +52,9 @@ gem 'cancancan'
 # AWS S3 for image upload
 gem "aws-sdk-s3", "~> 1.83"
 
+# Used to implement search capability
+gem 'pg_search'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

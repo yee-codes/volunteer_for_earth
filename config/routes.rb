@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   # Devise routes
   devise_for :users
   # Donate button with stripe
-  resources :charges  
+  resources :charges
+  # Search route
+  resources :search, only: [:index]
 end

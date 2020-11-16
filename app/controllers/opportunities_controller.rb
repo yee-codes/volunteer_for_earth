@@ -4,7 +4,11 @@ class OpportunitiesController < ApplicationController
 
   # List all current volunteering opportunities
   def index
-    @opportunities = Opportunity.all
+    if params[:query].present?
+      @opportunities = Opportunity.search(params[:query])
+    else
+      @opportunities = Opportunity.all
+    end
   end
 
   # Show one opportunity
