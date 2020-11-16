@@ -21,4 +21,8 @@ class Opportunity < ApplicationRecord
 
     # An opportunity can only belong to one user
     belongs_to :user
+
+    # Include pg_search gem
+    include PgSearch::Model
+    pg_search_scope :search, against: [:location, :title, :organisation]
 end

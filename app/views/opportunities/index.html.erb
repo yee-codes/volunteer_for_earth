@@ -1,3 +1,9 @@
+<%# Search form %>
+<%= form_tag(search_index_path, method: "get") do %>
+  <%= text_field_tag 'query' %>
+  <%= submit_tag "Search for Opportunities"%>
+<% end %>
+
 <%# Opportunities index page displaying all current opportunities %>
 <div class="container">
  <h1 class="text-center">Current Opportunities</h1>
