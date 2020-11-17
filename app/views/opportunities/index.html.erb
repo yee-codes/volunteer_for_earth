@@ -1,21 +1,32 @@
+<h1 class="text-center">Current Opportunities</h1>
+
 <%# Search form %>
-<%= form_tag(opportunities_path, method: "get") do %>
-  <%= text_field_tag 'query' %>
-  <%= submit_tag "Search for Opportunities"%>
-<% end %>
+<div id="container" class="container">
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1 text-center">
+      <div class="info-form">
+        <%= form_tag(opportunities_path, method: "get") do %>
+          <%= text_field_tag 'query', nil, placeholder: 'Enter keyword...' %>
+          <%= submit_tag "Search" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
 
 <%# Opportunities index page displaying all current opportunities %>
-<div class="container">
- <h1 class="text-center">Current Opportunities</h1>
+<div class="container"> 
   <div class="card-deck"> 
   <% @opportunities.each do |opportunity| %> 
       
-      <div class="card mb-4" style="min-width: 18rem;">
+      <div class="card text-white bg-success mb-3" style="min-width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title text-center"><%=opportunity.title%></h5>
+            <h5 class="card-title"><%=opportunity.title%></h5>
             <p class="card-text mt-2"><%=opportunity.organisation %></p>
-            <p class="card-text"><small class="text-muted"><%= opportunity.location %></small></p>
-            <button type="button" class="btn btn-success text-white"><p class="card-text text-center"><%= link_to 'More details', opportunity_path(opportunity) %></p></button>
+            <p class="card-text"><small class=""><%= opportunity.location %></small></p>
+            <button type="button" class="btn btn-warning"><p class="card-text text-center"><%= link_to 'More details', opportunity_path(opportunity) %></p></button>
         </div>
       </div> 
   <%end%> 

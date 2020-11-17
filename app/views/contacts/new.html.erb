@@ -10,26 +10,37 @@
     </p>
 </div>
 
+<div class="center-text">
+    <h2>Contact Us</h2>
+</div>
 <%# Website contact form %>
-<%= form_for @contact do |f| %>
-    <% if flash[:error].present? %>
-        <p> flash[:error]</p>
-    <% end %>
+<div id="container" class="container">
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1 text-center">
+      <div class="info-form">
+        <%= form_for @contact do |f| %>
+            <% if flash[:error].present? %>
+                <p> flash[:error]</p>
+            <% end %>
 
-    <%= f.label :name %> <br>
-    <%= f.text_field :name, required: true %><br>
+            <%= f.label :name %> <br>
+            <%= f.text_field :name, required: true %><br>
 
-    <%= f.label :email %> <br>
-    <%= f.text_field :email, required: true %><br>
+            <%= f.label :email %> <br>
+            <%= f.text_field :email, required: true %><br>
 
-    <%= f.label :message %> <br>
-    <%= f.text_area :message, as: :text %>
- 
-    <%= f.label :nickname, class: "hidden" %> <br>
-    <%= f.text_field :nickname, class: "hidden" %>
+            <%= f.label :message %> <br>
+            <%= f.text_area :message, as: :text %>
+        
+            <%= f.label :nickname, class: "hidden" %> <br>
+            <%= f.text_field :nickname, class: "hidden" %>
 
-    <%= f.submit 'Send Message', class: "button" %>
-  <% end %>
+            <%= f.submit 'Send', class: "button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <%# Our mission page banner image %>
 <div class="mission-image">
