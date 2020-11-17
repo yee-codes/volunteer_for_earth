@@ -43,6 +43,9 @@ gem 'stripe'
 # Contact form
 gem 'mail_form'
 
+# Toastr notifications
+gem 'toastr-rails'
+
 # App admin dashboard
 gem 'rails_admin'
 
