@@ -16,6 +16,8 @@
   </div>
 </div>
 
+<%= mail_to @email, "I'm interested", subject: "This is an example email" %>
+
 <div class="text-center">
   <% if current_user %>
     <% if current_user.id == @opportunity.user_id %>
