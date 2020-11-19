@@ -1,5 +1,5 @@
-<p>This page is only accessible to approved organisations!</p>
-<p>Please click <%= link_to 'here', new_contact_path %> to contact us for approval</p>
+<p class="text-center">This page is only accessible to approved organisations!</p>
+<p class="text-center">Please click <%= link_to 'here', new_contact_path %> to contact us for approval</p>
 
 <%# Display any errors that are preventing the form from being saved %>
 <% if @opportunity.errors.any? %>
@@ -17,41 +17,51 @@
   <% end %>
 
 <%# Only users with admin or organisation role can create a new opportunity %>
-<% if current_user.superadmin_role? || current_user.organisation_role? %>
+<div id="container" class="container">
+  <div class="row">
+    <div class="col-sm-10 offset-sm-1 text-center">
+      <div class="info-form">
+        <% if current_user.superadmin_role? || current_user.organisation_role? %>
 
-<h1>find volunteers</h1>
+        <h1 class="text-center">Create New Listing</h1>
 
-<%= form_with scope: :opportunity, url: opportunities_path, local: true do |form| %>
-  <p>
-    <%= form.label :organisation %><br>
-    <%= form.text_field :organisation %>
-  </p>
+        <%= form_with scope: :opportunity, url: opportunities_path, local: true do |form| %>
+          <p>
+            <%= form.label :organisation %><br>
+            <%= form.text_field :organisation %>
+          </p>
 
-  <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-  </p>
+          <p>
+              <%= form.label :title %><br>
+              <%= form.text_field :title %>
+          </p>
 
-  <p>
-      <%= form.label :location %><br>
-      <%= form.text_field :location %>
-  </p>
- 
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
- 
-  <p>
-    <%= form.label :image %><br>
-    <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg' %>
-  </p>
+          <p>
+              <%= form.label :location %><br>
+              <%= form.text_field :location %>
+          </p>
+        
+          <p>
+            <%= form.label :description %><br>
+            <%= form.text_area :description %>
+          </p>
+        
+          <p>
+            <%= form.label :image %><br>
+            <%= form.file_field :image, accept: 'image/png, image/jpg, image/jpeg' %>
+          </p>
 
-  <p>
-    <%= form.submit "Create New Opportunity"%>
-  </p>
-<% end %>
+          <p>
+            <%= form.submit "Create New Opportunity"%>
+          </p>
+        <% end %>
 
-<% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Back', opportunities_path %>
+<div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-outline-info"><%= link_to 'Back', opportunities_path %></button>
+</div>

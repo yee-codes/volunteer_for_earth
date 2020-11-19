@@ -14,6 +14,7 @@ class OpportunitiesController < ApplicationController
   # Show one opportunity
   def show
     @opportunity = Opportunity.find(params[:id])
+    @email = User.find(@opportunity.user_id).email
   end
 
   # Initialise a new opportunity listing
