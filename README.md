@@ -1,5 +1,4 @@
 # Term 2 Assignment 2 - Marketplace Project
-# Shao Yee Ng
 
 ## Volunteer for Earth - There's no planet B!
 
