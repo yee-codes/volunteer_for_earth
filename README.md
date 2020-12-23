@@ -1,4 +1,4 @@
-# Term 2 Assignment 2 - Marketplace Project
+# Term 2 Assignment 2 - Marketplace Project ✅
 
 ## Volunteer for Earth - There's no planet B!
 
